@@ -54,7 +54,7 @@ Zakładka **Mod** włącza i wyłącza cały mod i każdą jego część osobno:
 |---|---|---|
 | **Mod włączony** | Wyłączony: gra startuje bez żadnych zmian, tak jak bez moda. | po ponownym uruchomieniu gry |
 | **HUD transmisji** | Grafiki jak w telewizji zamiast HUD-u gry (projekt z edytora HUD). | po ponownym uruchomieniu gry |
-| **Wygląd menu** | Nowe menu, czcionka i tła ekranów (zakładka *Menu*). | od następnego ekranu gry |
+| **Wygląd menu** | Funkcja eksperymentalna, domyślnie wyłączona: nowe menu, czcionka i tła ekranów (zakładka *Menu*). | od następnego ekranu gry |
 | **Styl lotu** | Własna sylwetka skoczków (zakładka *Styl lotu*). | od razu |
 | **Tablica na belce** | Własna grafika na tablicy przy belce (zakładka *Tablica na belce*). | od następnej skoczni |
 | **Wiatr i belka – przeliczniki** | Zmienny wiatr, przeliczniki, jury, korytarz (zakładka *Wiatr i belka*). | po ponownym uruchomieniu gry |
@@ -92,11 +92,15 @@ Jeśli projekt nie ma żadnych elementów dla danego trybu i serii, w grze zosta
 - wiatr: strzałka, strzałka 3D i płynące smugi z innym kolorem, gdy wiatr wychodzi poza korytarz (przy włączonym
   korytarzu wiatru);
 - noty sędziów z krajami — odrzucona najwyższa i najniższa nota może być przekreślona albo przygaszona;
+- nota skoczka (punkty tego skoku) i nota drużyny (suma drużyny w konkursie) — także w drużynówkach;
+- **Next 5** — pięciu kolejnych zawodników z listy startowej, i **TOP5** — bieżąca klasyfikacja konkursu
+  (zawodnicy albo drużyny z punktami), jako gotowe elementy w *+ Dodaj element*;
 - elementy widoczne tylko przy dodatnim, ujemnym albo zerowym przeliczniku (wiatr 0.0 i belka bez zmiany) —
   projekt bez elementów „przy zerowym” pokazuje przy 0.0 te „przy dodatnim”.
 
 **Animacje.** Wejście i wyjście elementów: przenikanie, wjazdy z każdej strony, skalowanie, odsłanianie,
-z czasem, opóźnieniem i płynnością.
+z czasem, opóźnieniem i płynnością. *Znika po czasie* — element schodzi z ekranu po ustawionej liczbie sekund,
+więc w tym samym miejscu można potem pokazać inny.
 
 <p align="center"><img src="docs/images/edytor-hud-lot.jpg" width="900" alt="Edytor HUD - lot"></p>
 
@@ -108,7 +112,8 @@ gracza jako nowy. *Użyj w grze* wybiera projekt, który rysuje gra.
 
 <p align="center"><img src="docs/images/launcher-menu.jpg" width="900" alt="Launcher - zakładka Menu"></p>
 
-Zakładka **Menu** wybiera rodzaj wyglądu:
+Własny wygląd menu to **funkcja eksperymentalna** — domyślnie wyłączona (w launcherze oznaczona innym kolorem),
+dopóki nie zostanie dopracowana. Po włączeniu zakładka **Menu** wybiera rodzaj wyglądu:
 
 - **Menu moda** — nowe ekrany z kafelkami, tabelami i okienkami: menu główne, zawody, trening, gracze, rekordy,
   statystyki, powtórki, skocznie graczy, ustawienia, wyniki i klasyfikacje, ekrany wczytywania oraz cała
@@ -128,8 +133,11 @@ dla napisów gry, ekranu wczytywania i napisów końcowych.
 Własna sylwetka skoczków — na najeździe, w locie i przy lądowaniu — z podglądem na prawdziwym modelu skoczka
 z gry (model mod wypakowuje przy pierwszym uruchomieniu gry).
 
-- **Zawodnicy** — styl domyślny dla wszystkich i osobne style dla wybranych skoczków (nazwa jak w grze,
-  np. „Kamil STOCH”).
+- **Zawodnicy** — styl domyślny dla wszystkich i osobne style dla wybranych skoczków, wybieranych z listy skoczków
+  gry (także utworzonych w grze); nowy zawodnik zaczyna od stylu domyślnego. Style można kopiować i wklejać,
+  duplikować, przywracać do domyślnego i udostępniać w pliku.
+- **Pakiety stylów** — cały zestaw stylów zapisany pod nazwą (np. pod puchar) i przełączany jednym kliknięciem;
+  pliki w `DSJ4Mod\StylePacks` można wysłać innym graczom.
 - **Narty** — V (dziób na zewnątrz), dziób w górę / w dół, krawędź, rozstaw, wysunięcie, kolana; każda narta
   osobno albo obie razem.
 - **Sylwetka** — kąt ciało–narty, zgięcie w biodrach, ugięcie nóg, głębokość przysiadu i lądowania (telemark),
@@ -184,7 +192,11 @@ są wyłączone.
 
 ## Gra online
 
-W grze online mod sam wyłącza wszystko, co wpływa na skok:
+Gdy w modzie działa wiatr z przelicznikami albo własny styl lotu, **gra online jest zablokowana** —
+także w standardowym menu gry. Próba wejścia do gry online zamyka grę z komunikatem, że najpierw trzeba
+wyłączyć te funkcje w launcherze.
+
+Gdy są wyłączone, w grze online mod i tak sam wyłącza wszystko, co wpływa na skok:
 
 - zasady wiatru i belki, przeliczniki, jury i korytarz,
 - styl lotu (skoczkowie mają sylwetkę z gry),
@@ -197,7 +209,7 @@ sesji online.
 ## Licencja
 
 DSJ4 BLACKOUT MOD jest darmowy do użytku prywatnego. Kod źródłowy nie jest publiczny — ze względu na bezpieczeństwo
-gry online i rankingów (uzgodnione z twórcą gry). Mod korzysta z bibliotek zewnętrznych (Dear ImGui, nlohmann/json,
+gry online i rankingów. Mod korzysta z bibliotek zewnętrznych (Dear ImGui, nlohmann/json,
 miniz) i czcionki Roboto Condensed na ich własnych licencjach — patrz [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 Deluxe Ski Jump 4 jest grą firmy Mediamond. To nieoficjalna modyfikacja, która nie zawiera plików gry.
