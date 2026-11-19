@@ -1,0 +1,48 @@
+name: Błąd
+description: Coś nie działa albo gra się wysypuje
+labels: [błąd]
+body:
+  - type: input
+    id: wersja
+    attributes:
+      label: Wersja moda
+      placeholder: np. 1.0.1
+    validations:
+      required: true
+  - type: dropdown
+    id: czesc
+    attributes:
+      label: Której części dotyczy?
+      options:
+        - HUD / edytor HUD
+        - Menu moda
+        - Styl lotu
+        - Wiatr, belka, przeliczniki
+        - Tablica na belce
+        - Gra online
+        - Launcher / instalator
+        - Inne
+    validations:
+      required: true
+  - type: textarea
+    id: opis
+    attributes:
+      label: Co się dzieje?
+      description: Co się stało i czego się spodziewałeś.
+    validations:
+      required: true
+  - type: textarea
+    id: kroki
+    attributes:
+      label: Jak to powtórzyć?
+      placeholder: |
+        1. Zawody → Puchar Świata
+        2. Kliknij ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Przeciągnij tu plik `DSJ4Mod\dsj4mod.log` z folderu gry (zaraz po wystąpieniu błędu, po zamknięciu gry). Zrzuty ekranu też mile widziane.

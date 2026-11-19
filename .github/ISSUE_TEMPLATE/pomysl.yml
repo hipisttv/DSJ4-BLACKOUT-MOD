@@ -1,0 +1,18 @@
+name: Pomysł
+description: Propozycja nowej funkcji lub zmiany
+labels: [pomysł]
+body:
+  - type: textarea
+    id: pomysl
+    attributes:
+      label: Co chcesz dodać lub zmienić?
+    validations:
+      required: true
+  - type: textarea
+    id: dlaczego
+    attributes:
+      label: Po co?
+      description: Jaki problem to rozwiązuje albo jak to wygląda w transmisjach / w innych grach.
+  - type: markdown
+    attributes:
+      value: Funkcje wpływające na skok lub wynik muszą być wyłączone w grze online.
