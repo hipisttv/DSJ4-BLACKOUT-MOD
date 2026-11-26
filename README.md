@@ -4,7 +4,7 @@
 
 Nieoficjalny mod do **Deluxe Ski Jump 4** (wersja gry 1.12.3): telewizyjny HUD z własnym edytorem, nowe menu
 z obsługą gry online, własny styl lotu skoczków, zasady wiatru i belki jak w Pucharze Świata, własna tablica
-na belce i rekordy życiowe. Każdą część włączasz i wyłączasz osobno w launcherze.
+na belce, paczki tekstur z cyfrowymi bandami reklamowymi i rekordy życiowe. Każdą część włączasz i wyłączasz osobno w launcherze.
 
 Mod nie zawiera plików gry — potrzebna jest Twoja kopia DSJ4.
 
@@ -18,6 +18,7 @@ Mod nie zawiera plików gry — potrzebna jest Twoja kopia DSJ4.
 - [Menu moda](#menu-moda)
 - [Styl lotu](#styl-lotu)
 - [Tablica na belce](#tablica-na-belce)
+- [Tekstury i bandy reklamowe](#tekstury-i-bandy-reklamowe)
 - [Wiatr i belka](#wiatr-i-belka)
 - [Rekordy i następny zawodnik](#rekordy-i-następny-zawodnik)
 - [Gra online](#gra-online)
@@ -63,6 +64,10 @@ Zakładka **Mod** włącza i wyłącza cały mod i każdą jego część osobno:
 Stąd uruchomisz też grę, edytor HUD i otworzysz folder moda. W trakcie gry online przełączniki stylu lotu
 oraz wiatru i belki są zablokowane (patrz [Gra online](#gra-online)).
 
+**Aktualizacje.** Launcher przy starcie sprawdza, czy na GitHubie jest nowsza wersja moda, i pokazuje pasek
+z przyciskiem do pobrania instalatora i listą zmian (wersję można pominąć). W zakładce *Mod* jest też
+*Sprawdź teraz*.
+
 ## HUD transmisji i edytor HUD
 
 <p align="center"><img src="docs/images/gra-hud.jpg" width="900" alt="HUD transmisji w grze - zawodnik na rozbiegu"></p>
@@ -97,6 +102,20 @@ Jeśli projekt nie ma żadnych elementów dla danego trybu i serii, w grze zosta
   (zawodnicy albo drużyny z punktami), jako gotowe elementy w *+ Dodaj element*;
 - elementy widoczne tylko przy dodatnim, ujemnym albo zerowym przeliczniku (wiatr 0.0 i belka bez zmiany) —
   projekt bez elementów „przy zerowym” pokazuje przy 0.0 te „przy dodatnim”.
+
+TOP5 i nota drużyny biorą punkty z klasyfikacji gry, więc obejmują też zawodników sterowanych przez komputer.
+Każdy element można **obrócić** (pole *Obrót* w sekcji *Pozycja i rozmiar*) — tekst w elemencie obraca się
+razem z nim.
+
+**Flagi.** Edytor zna kody krajów gry dla wszystkich państw świata. *Pobierz flagi z internetu* (sekcja
+*Flagi i portrety*) pobiera flagi PNG z kilku źródeł — płaskie, okrągłe, kwadratowe, przyciski, powiewające,
+3D — z wyborem kształtu, rozmiaru i obwódki, z podglądem.
+
+**Szerokie ekrany.** Na monitorach 21:9 i szerszych elementy przy krawędziach (np. pasek zawodnika w rogu)
+same dociągają się do boków ekranu, a proporcje i odstępy zostają jak w projekcie.
+
+**Płynność.** Obrazki i napisy elementu, który za chwilę się pojawi, mod przygotowuje w tle — wejście
+elementu nie przycina gry.
 
 **Animacje.** Wejście i wyjście elementów: przenikanie, wjazdy z każdej strony, skalowanie, odsłanianie,
 z czasem, opóźnieniem i płynnością. *Znika po czasie* — element schodzi z ekranu po ustawionej liczbie sekund,
@@ -153,7 +172,24 @@ sylwetkę, gra nie zapisuje rekordów osobistych (patrz [Rekordy](#rekordy-i-nas
 <p align="center"><img src="docs/images/launcher-tablica.jpg" width="900" alt="Launcher - Tablica na belce"></p>
 
 Własna grafika na tablicy przy belce startowej. Tablica ma kształt obrazka PNG (przezroczyste miejsca
-są dziurami), ustawiasz jej szerokość, wysokość nad belką, grubość, słupki i ukrycie nazwy skoczni.
+są dziurami), ustawiasz jej szerokość, wysokość nad belką, grubość, kolor boków, słupki i ukrycie nazwy skoczni.
+
+- **Tablica cyfrowa** — przód tablicy zmienia się jak ekran LED: klatki z kilku obrazków albo z GIF-a,
+  z ustawionym czasem jednej klatki.
+- **Warstwy (efekt 3D)** — do 6 obrazków przed tablicą, każdy z własnym odstępem od tablicy, grubością
+  i kolorem boków (obrazki na tym samym płótnie co obrazek główny).
+
+## Tekstury i bandy reklamowe
+
+Zakładka **Tekstury** w launcherze:
+
+- **Tekstury gry** — wszystkie tekstury z plików gry (bez strojów), podzielone na kategorie, z podglądem
+  oryginału i podmiany obok siebie. Podmienione tekstury tworzą **paczkę tekstur** — paczek może być wiele,
+  aktywną wybierasz jednym kliknięciem.
+- **Grafiki menu moda** — podmiana grafik nowego menu w tej samej paczce.
+- **Bandy reklamowe** — osobny tryb dla band przy skoczni, także **cyfrowe bandy**: GIF albo kilka obrazków
+  zmieniających się co ustawiony czas.
+- *Udostępnij* zapisuje paczkę jako ZIP, *Wczytaj ZIP* dodaje paczkę od innego gracza.
 
 ## Wiatr i belka
 
@@ -166,7 +202,8 @@ są dziurami), ustawiasz jej szerokość, wysokość nad belką, grubość, słu
   *Warunki zmieniają się też w trakcie skoku*, wiatr zmienia się cały czas, także w locie.
 - **Przeliczniki FIS** — rekompensaty punktowe za wiatr i belkę liczone jak w Pucharze Świata oraz zielona
   linia „do prowadzenia” z przelicznikami, na bieżąco.
-- **Jury** — zmienia belkę w trakcie serii jak w Pucharze Świata: obniża ją dopiero po kilku skokach przy HS.
+- **Jury** — belka wybrana na początek serii zostaje na całą serię i zmienia ją tylko jury, jak w Pucharze
+  Świata: obniża ją dopiero po kilku skokach przy HS.
   Ustawiasz, od ilu % HS skok jest za daleki (domyślnie 100%), po ilu takich skokach belka idzie niżej
   (domyślnie 2) i o ile (1–3), najmniej zawodników między zmianami (5) i najwięcej zmian w serii (3).
   Opcjonalnie podnoszenie belki po serii krótkich skoków (najwyżej 2 ponad belkę z początku serii).
@@ -176,6 +213,9 @@ są dziurami), ustawiasz jej szerokość, wysokość nad belką, grubość, słu
 Gdy działają zmienione zasady wiatru lub przeliczniki, gra nie zapisuje rekordów osobistych
 (patrz [Rekordy](#rekordy-i-następny-zawodnik)).
 
+Powtórka skoku w trakcie zawodów pokazuje ten sam wiatr i ten sam lot co prawdziwy skok; oglądanie powtórek
+nie zmienia punktów ani decyzji jury.
+
 Kierunek wiatru względem skoku mod liczy z ustawienia nart skoczka — zmiana kamery niczego nie zmienia.
 Wyłączona karta *Wiatr i belka* = wiatr dokładnie jak w oryginalnej grze. W treningu i online jury i korytarz
 są wyłączone.
@@ -183,8 +223,11 @@ są wyłączone.
 ## Rekordy i następny zawodnik
 
 - **Rekordy życiowe** skoczków (najdłuższy skok i rekord na każdej skoczni) zapisywane w `DSJ4Mod\records.json`
-  i dostępne w HUD-zie, z oznaczeniem, gdy skok je pobije. Skoki z gry online się nie zapisują.
-- **Następny zawodnik** z listy startowej — także w drugiej i kolejnych seriach.
+  i dostępne w HUD-zie, z oznaczeniem, gdy skok je pobije. Skoki z gry online i skoki zakończone upadkiem
+  się nie zapisują. W zakładce **Rekordy** launchera rekordy można przeglądać, poprawiać i usuwać — także
+  w trakcie gry.
+- **Następny zawodnik** i **Next 5** z listy startowej — w drugiej i kolejnych seriach w kolejności według
+  klasyfikacji po poprzednich seriach.
 - **Rekordy osobiste nie zapisują się**, gdy działają zmienione zasady wiatru, przeliczniki albo styl lotu — gra
   wtedy w ogóle nie uznaje skoku za rekord osobisty: nic nie trafia do profilu gracza, nie powstaje powtórka rekordu
   i nie ma czego wysłać na serwer (w `DSJ4Mod\dsj4mod.log` wpis „Rekord osobisty pominiety”). Statystyki i lokalne
