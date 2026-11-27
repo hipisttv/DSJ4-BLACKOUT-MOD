@@ -58,7 +58,7 @@ Zakładka **Mod** włącza i wyłącza cały mod i każdą jego część osobno:
 | **Wygląd menu** | Funkcja eksperymentalna, domyślnie wyłączona: nowe menu, czcionka i tła ekranów (zakładka *Menu*). | od następnego ekranu gry |
 | **Styl lotu** | Własna sylwetka skoczków (zakładka *Styl lotu*). | od razu |
 | **Tablica na belce** | Własna grafika na tablicy przy belce (zakładka *Tablica na belce*). | od następnej skoczni |
-| **Wiatr i belka – przeliczniki** | Zmienny wiatr, przeliczniki, jury, korytarz (zakładka *Wiatr i belka*). | po ponownym uruchomieniu gry |
+| **Wiatr i belka – przeliczniki** | Zmienny wiatr, przeliczniki, jury albo ręczna zmiana belki, korytarz (zakładka *Wiatr i belka*). | od następnego skoku |
 | **Rekordy i następny zawodnik** | Rekordy życiowe skoczków i następny zawodnik — dane dla HUD-u. | po ponownym uruchomieniu gry |
 
 Stąd uruchomisz też grę, edytor HUD i otworzysz folder moda. W trakcie gry online przełączniki stylu lotu
@@ -112,7 +112,10 @@ razem z nim.
 3D — z wyborem kształtu, rozmiaru i obwódki, z podglądem.
 
 **Szerokie ekrany.** Na monitorach 21:9 i szerszych elementy przy krawędziach (np. pasek zawodnika w rogu)
-same dociągają się do boków ekranu, a proporcje i odstępy zostają jak w projekcie.
+same dociągają się do boków ekranu, a proporcje i odstępy zostają jak w projekcie. Elementy leżące na sobie
+(pasek z tekstami i flagami) przesuwają się razem. Przełącznik *Ekran:* nad płótnem (16:9, 16:10, 21:9, 4:3,
+32:9) pokazuje projekt na danym monitorze, a *Dostosuj projekt do monitora szerokokątnego* ustawia kotwice
+wszystkich elementów według grup.
 
 **Płynność.** Obrazki i napisy elementu, który za chwilę się pojawi, mod przygotowuje w tle — wejście
 elementu nie przycina gry.
@@ -163,6 +166,8 @@ z gry (model mod wypakowuje przy pierwszym uruchomieniu gry).
   biodra przód / tył, pochylenie tułowia, głowa.
 - **Ręce** — odsunięcie od ciała, do przodu / do tyłu, zgięcie łokcia; zaawansowane obroty stawów.
 - **Przejścia** — czas przejścia przy wybiciu i lądowaniu; *Odtwórz skok* pokazuje styl na nagranym skoku.
+- **Strój na podglądzie** — model skoczka w teksturach stroju z Dokumentów (folder Dokumentów można wskazać),
+  z osobnym strojem dla każdej części i zmianą kolorów części jak w grze.
 
 Styl zmienia tylko wygląd skoczka — fizyka lotu i odległość są takie jak w grze. Mimo to, gdy styl zmienia
 sylwetkę, gra nie zapisuje rekordów osobistych (patrz [Rekordy](#rekordy-i-następny-zawodnik)).
@@ -202,6 +207,8 @@ Zakładka **Tekstury** w launcherze:
   *Warunki zmieniają się też w trakcie skoku*, wiatr zmienia się cały czas, także w locie.
 - **Przeliczniki FIS** — rekompensaty punktowe za wiatr i belkę liczone jak w Pucharze Świata oraz zielona
   linia „do prowadzenia” z przelicznikami, na bieżąco.
+- **Zmiana belki** — dwa tryby: *Jury zmienia belkę* albo *Zmieniam belkę ręcznie (+ / -)*. Ręczna zmiana
+  działa na żywo, także gdy zawodnik siedzi już na belce. Przeliczniki liczą się zawsze od oryginalnej belki serii.
 - **Jury** — belka wybrana na początek serii zostaje na całą serię i zmienia ją tylko jury, jak w Pucharze
   Świata: obniża ją dopiero po kilku skokach przy HS.
   Ustawiasz, od ilu % HS skok jest za daleki (domyślnie 100%), po ilu takich skokach belka idzie niżej
